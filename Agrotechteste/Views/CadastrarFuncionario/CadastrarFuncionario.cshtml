@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Cadastrar Funcionários</title>
+    <link rel="stylesheet" href="~/css/cadastrarfuncionario.css" />
+    <script src="~/js/cadastrarFuncionario.js" defer></script> 
+</head>
+<body>
+    <div class="linha"><p class="cadastrar">Agrotech - Cadastrar Funcionários</p></div>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="menu-lateral">
+            <ul>
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+            </ul>
+        </div>
+
+        <!-- Formulário e Ações juntos -->
+        <div class="formulario-e-acoes">
+            <div class="formulario">
+                <form asp-action="CadastrarFuncionario" method="post">
+                    <div class="idUsuario">
+                        <label for="id">ID:</label>
+                        <input type="text" id="id" name="idUsuario" placeholder="AUTO" disabled />
+                    </div>
+
+                    <div class="nome">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" minlength="10" required />
+                    </div>
+
+                    <div class="cpf">
+                        <label for="cpf">CPF:</label>
+                        <input type="text"
+                               id="cpf"
+                               name="cpf"
+                               maxlength="11"
+                               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                               pattern="\d{11}"
+                               title="Digite somente números (11 caracteres)."
+                               required />
+                    </div>
+
+                    <div class="nome_usuario">
+                        <label for="nomedeusuario">Nome de Usuário:</label>
+                        <input type="text" id="nome_usuario" name="nome_usuario" maxlength="11" required />
+                    </div>
+
+                    <div class="senha_usuario">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="senha_usuario" name="senha_usuario" maxlength="11" required />
+                    </div>
+
+                    <div class="salvar">
+                        <button type="submit" class="salvar">SALVAR</button>
+                        <button type="button" id="novo">NOVO</button>
+                        <button type="button" id="excluir" disabled>EXCLUIR</button>
+                        <button type="button"><a class="Voltar" href="@Url.Action("Configuracoes", "Settings")">VOLTAR</a></button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

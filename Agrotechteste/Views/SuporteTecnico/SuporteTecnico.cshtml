@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Agrotech - Suporte Técnico";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/suportetecnico.css">
+</head>
+<body>
+    <div class="linha">
+        <p class="cadastrar">Agrotech - Suporte Técnico</p>
+    </div>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="menu-lateral">
+            <ul>
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+            </ul>
+        </div>
+
+        <!-- Formulário e Ações juntos -->
+        <div class="formulario-e-acoes">
+            <!-- Parte esquerda dos campos -->
+            <div class="formulario">
+                <p> Para qualquer dúvida ou ajuda, é só chamar nosso suporte técnico! Manda um e-mail pra gente em:</p>
+
+                <p>suporteagrotech@gmail.com </p>
+                <button class="voltar" type="button"><a class="voltar" href="@Url.Action("Configuracoes", "Settings")">VOLTAR</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

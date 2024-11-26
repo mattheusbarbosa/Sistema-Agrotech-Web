@@ -1,0 +1,30 @@
+﻿@page
+@model Agrotechteste.Views.Home.IndexModel
+@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Página Principal</title>
+    <link rel="stylesheet" href="~/css/paginaprincipal.css">
+</head>
+<body>
+    <div class="linha"><p class="cadastrar">Agrotech - Página Principal</p></div>
+    <div class="container">
+        <div class="menu-lateral">
+            <ul>
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+                <form method="post" asp-action="Logout">
+                    <button class="sair" type="submit">Sair</button>
+                </form>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

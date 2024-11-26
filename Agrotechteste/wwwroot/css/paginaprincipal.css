@@ -1,0 +1,83 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #93ee97;
+    margin: 0;
+    padding: 0;
+}
+
+.linha {
+    background-color: #369b97;
+    width: 100%;
+    height: 30px;
+}
+
+.cadastrar {
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.menu-lateral {
+    width: 264px;
+    background-color: #52d592;
+    padding: 20px; 
+    outline: none; 
+    transition: background-color 0.3s; 
+}
+
+    .menu-lateral:hover {
+        background-color: #38c77d; 
+    }
+
+
+.links {
+    text-decoration: none;
+    color: black;
+    border-radius: 12px;
+    padding: 6px;
+    transition: background-color 0.3s; 
+}
+
+    .links:focus {
+        outline: none; 
+    }
+
+    .links:hover {
+        background-color: #09c262; 
+    }
+
+
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    margin: 20px 0;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.menu-lateral span {
+    margin-right: 10px;
+}
+
+.sair {
+    background-color: #369b97;
+    color: #f0f0f0;
+    font-size: 16px;
+    padding: 10px 86px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 12px;
+}

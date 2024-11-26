@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Configurações</title>
+    <link rel="stylesheet" href="~/css/relatorios.css">
+</head>
+<body>
+    <div class="linha">
+        <p class="cadastrar">Agrotech - Relatórios</p>
+    </div>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="menu-lateral">
+            <ul>
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+            </ul>
+        </div>
+
+        <!-- Formulário e Ações juntos -->
+        <div class="formulario-e-acoes">
+            <!-- Parte esquerda dos campos -->
+            <div class="formulario">
+                <div class="relatoriosprodutos">
+                    <button>
+                        <a class="produtos" href="@Url.Action("Produto", "RelatorioProduto")">Gerar Relatório Produtos 🌱</a>
+                    </button>
+                </div>
+
+                <div class="manualdeajuda">
+                    <button>
+                        <a class="produtos" href="@Url.Action("Gerencia", "RelatorioGerencia")">Gerar Relatório Gerência 📊</a>
+                    </button>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

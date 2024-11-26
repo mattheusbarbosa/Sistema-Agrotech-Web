@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Configurações</title>
+    <link rel="stylesheet" href="~/css/conf.css" />
+</head>
+<body>
+    <div class="linha"><p class="cadastrar">Agrotech - Configurações</p></div>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="menu-lateral">
+            <ul>
+                
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+            </ul>
+        </div>
+
+        <!-- Formulário e Ações juntos -->
+        <div class="formulario-e-acoes">
+            <!-- Parte esquerda dos campos -->
+            <div class="formulario">
+                <div class="cadastrarfuncionario">
+                    <button>
+                        <a class="cadastrar" asp-controller="CadastrarFuncionario" asp-action="Index">Cadastrar Funcionário</a>
+                    </button>
+                </div>
+
+                <div class="manualdeajuda">
+                    <button><a class="manual" href="@Url.Action("BaixarManual", "ManualdeAjuda")" target="_blank">Manual de Ajuda</a></button>
+                </div>
+               
+                <div class="suportetecnico">
+                    <button>
+                        <a class="suporte" asp-controller="SuporteTecnico" asp-action="Index">Suporte Técnico</a>
+                    </button>
+                </div>
+
+               
+            </div>
+        </div>
+</body>
+</html>

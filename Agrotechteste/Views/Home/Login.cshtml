@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null; 
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-WEB</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body>
+    @model Agrotechteste.Models.LoginModel
+    <!-- Área de login -->
+    <div id="login" class="login-container">
+        <img src="~/images/user.png" alt="User Icon" class="user-icon">
+        <form asp-action="Login" method="post">
+            <input asp-for="nome_usuario"  placeholder="Nome de usuário" class="input-campo" />
+            <input asp-for="senha_usuario"  placeholder="Senha" class="input-campo" type="password" />
+          
+
+            <button type="submit" class="btn-login">ENTRAR</button>
+        </form>
+    </div>
+
+    <!-- Footer fixo com informações de contato -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                
+                <p>Telefone: +55 (62) 4002-8922</p>
+                <p>Email: contatoagrotech@gmail.com</p>
+                <p>Email Suporte Técnico: suporteagrotech@gmail.com</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Acesse nossas redes sociais:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="~/images/2023_Facebook_icon.svg.webp" alt="Facebook" class="icon"></a>
+                    <a href="#"><img src="~/images/Instagram_logo_2022.svg.webp" alt="Instagram" class="icon"></a>
+                </div>
+                <p>Entre em contato pelo WhatsApp:</p>
+                <a href="#"><img src="~/images/2062095_application_chat_communication_logo_whatsapp_icon.svg.png" alt="WhatsApp" class="icon"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

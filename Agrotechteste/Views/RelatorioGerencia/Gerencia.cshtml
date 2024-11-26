@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Vendas</title>
+    <link rel="stylesheet" href="~/css/relatoriogerencia.css" />
+    <script src="~/js/relatoriogerencia.js" defer></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+<body>
+    <div class="linha">
+        <p class="cadastrar">Relatórios Gerencia</p>
+    </div>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="menu-lateral">
+            <ul>
+                <li class="links"><span class="links">🌍</span><a class="links" href="@Url.Action("Index", "Home")">Página Inicial</a></li>
+                <li class="links"><span class="links">⚙️</span><a class="links" href="@Url.Action("Configuracoes", "Settings")">Configurações</a></li>
+                <li class="links"><span class="links">📊</span><a class="links" href="@Url.Action("Relatorios", "Reports")">Relatórios</a></li>
+            </ul>
+        </div>
+
+        <!-- Formulário e Ações juntos -->
+        <div class="formulario-e-acoes">
+            <div class="formulario">
+                @model IEnumerable<Agrotechteste.Models.GerenciaRelatorio>
+                <table class="tabela-produtos">
+
+                    <h1 class="titulo">Relatório Gerência 📊📃</h1>
+                    <p class="observacao" onmouseover="exibirMensagem()" onmouseout="ocultarMensagem()">OBSERVAÇÃO 🚩<hr></p>
+                    <span id="mensagem" style="display: none; color: rgb(0, 0, 0);"><b>Faturamento:</b> &nbsp;&nbsp;Total de produtos vendidos. <br><br><b>Despesas:</b> &nbsp;&nbsp;Total de insumos comprados. <br><br><b>Valor Líquido:</b> &nbsp;&nbsp;Faturamento - Despesas.<hr></span>
+                   
+                    <thead>
+                        <tr>
+                            
+                            <th class="produto">Faturamento 💲</th>
+                            <th class="quantidade_entrada">Despesa 💸</th>
+                            <th class="quantidade_saida">Valor Liquido 💰</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-body">
+                        @foreach (var produto in Model)
+                        {
+                            <tr>
+                                <td>@produto.valor_Total</td>
+                                <td>@produto.Valor_Insumo</td>
+                                <td>@produto.Liquido</td>
+                                
+                            </tr>
+                        }
+                    </tbody>
+                    
+                </table>
+
+                <div class="salvar">
+                    <button class="salvar" id="salvar">SALVAR RELATÓRIO</button>
+                    <button type="button"><a class="Voltar" href="@Url.Action("Relatorios", "Reports")">VOLTAR</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+       
+        function exibirMensagem() {
+            const mensagem = document.getElementById('mensagem');
+            mensagem.style.display = 'inline'; 
+        }
+
+        
+        function ocultarMensagem() {
+            const mensagem = document.getElementById('mensagem');
+            mensagem.style.display = 'none'; 
+        }
+    </script>
+        
+   
+    
+</body>
+</html>
